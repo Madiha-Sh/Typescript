@@ -115,3 +115,64 @@ m1.delegateWork();
 // public - free accessibility
 // private - only within the class
 // protected - within the class itself and it's derived classes only
+// enums - they store a bunch of numbers in our program and it is immutable
+var myConstants;
+(function (myConstants) {
+    myConstants[myConstants["pi"] = 3.14] = "pi";
+    myConstants[myConstants["e"] = 2.73] = "e";
+    myConstants[myConstants["log2"] = 0.3] = "log2";
+    myConstants[myConstants["log5"] = 0.7] = "log5";
+})(myConstants || (myConstants = {}));
+var radius = 10;
+var circumference = Math.floor(2 * myConstants.pi * radius);
+console.log("Circumference of circle is ".concat(circumference));
+// any 
+var mixed = [];
+mixed.push(1);
+mixed.push('string');
+mixed.push(false);
+console.log(mixed);
+var ninja;
+ninja = { name: 'A', age: "25" };
+console.log(ninja);
+// interfaces
+// interface Point{
+//   x: number,
+//   y: number
+// }
+// let drawPoint = (point: Point) => {
+//   // ..
+// }
+// drawPoint({
+//   x: 1,
+//   y: 2
+// })
+// // Typescript properties
+// class Point {
+//   constructor(private _x?: number, private _y?: number) {
+//   } 
+//   draw() {
+//     console.log('X: ' + this._x + ', Y: ' + this._y);
+//   }
+//   get x() {
+//     return this._x;
+//   }
+//   set x(value) {
+//     if(value < 0) {
+//       throw new Error('value cannot be less than 0');
+//     }
+//     this._x = value;
+//   } 
+// }
+// let point = new Point(1,2);
+// point.draw(); 
+// console.log(point.x);
+// point.x = 10;
+// let x = point.x;
+// console.log(x);   
+// let count = 5;
+// count = 'a';
+// let msg;
+// let endsWithC = (msg as string).endsWith('c');
+// import { module's class-name} from '/.module-name without extension
+// export class class-name

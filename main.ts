@@ -20,7 +20,7 @@ let person1: [string, number, number] = ['chris', 22, 23];
 enum color {red = 10, green, yellow};
 let c: color = color.yellow;
 console.log(c); 
-
+ 
 let randomValue: any = 10;
 randomValue = 'something';
 randomValue = true;
@@ -130,3 +130,86 @@ m1.delegateWork();
 // public - free accessibility
 // private - only within the class
 // protected - within the class itself and it's derived classes only
+
+// enums - they store a bunch of numbers in our program and it is immutable
+enum myConstants {
+  pi = 3.14,
+  e = 2.73,
+  log2 = 0.3,
+  log5 = 0.7
+}
+
+const radius: number = 10;
+const circumference = Math.floor(2 * myConstants.pi * radius)
+
+console.log(`Circumference of circle is ${circumference}`);
+
+// aliases
+
+type stringOrNum = string | number;
+
+// any 
+
+let mixed: any[] = [];
+mixed.push(1);
+mixed.push('string');
+mixed.push(false);
+console.log(mixed);
+
+let ninja : {name: any, age: any};
+ninja = {name: 'A', age: "25"};
+console.log(ninja);
+
+// interfaces
+// interface Point{
+//   x: number,
+//   y: number
+// }
+
+// let drawPoint = (point: Point) => {
+//   // ..
+// }
+ 
+// drawPoint({
+//   x: 1,
+//   y: 2
+// })
+
+// // Typescript properties
+
+// class Point {
+//   constructor(private _x?: number, private _y?: number) {
+//   } 
+
+//   draw() {
+//     console.log('X: ' + this._x + ', Y: ' + this._y);
+//   }
+
+//   get x() {
+//     return this._x;
+//   }
+
+//   set x(value) {
+//     if(value < 0) {
+//       throw new Error('value cannot be less than 0');
+//     }
+//     this._x = value;
+//   } 
+// }
+
+// let point = new Point(1,2);
+// point.draw(); 
+// console.log(point.x);
+// point.x = 10;
+// let x = point.x;
+// console.log(x);   
+
+// let count = 5;
+// count = 'a';
+
+// let msg;
+// let endsWithC = (msg as string).endsWith('c');
+
+// import { module's class-name} from '/.module-name without extension
+
+// export class class-name
